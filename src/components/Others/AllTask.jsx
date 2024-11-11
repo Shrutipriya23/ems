@@ -7,7 +7,10 @@ import { AuthContext } from '../../context/AuthProvider'
 const AllTask = () => {
 
     const [userData]=useContext(AuthContext)
-    //console.log(userData.employees)   //employee data nhi dikh raha
+    //console.log(userData.employees)   ...
+    if (!userData || !userData.employees) {  //check if user data exists
+        return <div>Loading employee tasks...</div>;
+    }
 
 
   return (
@@ -27,7 +30,7 @@ const AllTask = () => {
             <h3 className="text-lg font-medium w-1/5 text-blue-600">{e.taskCount.new_task}</h3>
             <h5 className="text-lg font-medium w-1/5 text-purple-600">{e.taskCount.active}</h5>
             <h5 className="text-lg font-medium w-1/5 text-green-600">{e.taskCount.completed}</h5>
-            <h5 className="text-lg font-medium w-1/5 text-red-600">{e.taskCountfailed}</h5>
+            <h5 className="text-lg font-medium w-1/5 text-red-600">{e.taskCount.failed}</h5>
         </div>
        ))}
        </div>

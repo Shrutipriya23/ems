@@ -11,7 +11,7 @@ const TaskList = ({data}) => {
             if(e.active){
                 return <AcceptTask key={idx} data={e}/>
             }
-            if(e.newTask){
+            if(e.new_task){
                 return <NewTask  key={idx} data={e}/>
             }
             if(e.complete){

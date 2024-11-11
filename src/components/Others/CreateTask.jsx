@@ -16,17 +16,28 @@ const CreateTask = () => {
     const submitHandler = (e) => {
         e.preventDefault()
 
-        setNewTask({ taskTitle, taskDescription, taskDate, category, active: false, newTask: true, failed: false, completed: false })
-
-        const data = userData.employees
+        // setNewTask({ taskTitle, taskDescription, taskDate, category, active: false, new_task: true, failed: false, completed: false })
+        setNewTask({
+            title: taskTitle,
+            description: taskDescription,
+            date: taskDate,
+            category,
+            active: false,
+            new_task: true,
+            failed: false,
+            completed: false,
+          });
+          
+        const data = userData.employees;
 
         data.forEach( (elem) =>{
             if (asignTo == elem.firstName) {
-                elem.tasks.push(newTask)
-                elem.taskCounts.newTask = elem.taskCounts.newTask + 1
+                elem.tasks.push(newTask);
+                elem.taskCount.new_task += 1;
             }
         });
-        setUserData(userData)
+        //setUserData(userData)
+        setUserData({ ...userData });
         //setUserData({ ...userData, employees: data });
         console.log(userData);
 
