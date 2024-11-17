@@ -8,7 +8,10 @@ body,
   height: 100%;
   background-color: #000000;
   color: #FFFFFF;
+  
 }
 #taskList::-webkit-scrollbar{
   display: none;
 }
+
+
