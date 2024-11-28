@@ -1,4 +1,8 @@
 import React from 'react'
+import { TiTick } from "react-icons/ti"
+import { FaPlus } from "react-icons/fa"
+import { FaClipboardCheck } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 
 
 const TaskListNumbers = ({data}) => {
@@ -18,22 +22,26 @@ const TaskListNumbers = ({data}) => {
 
   
     <div className="flex  justify-start items-center mt-10  gap-5   rounded-md ">
-        <div className=" flex  justify-center items-center px-9 py-6 rounded-xl h-[70px]  w-full bg-purple-500">
+        <div className=" flex  justify-center items-center px-9 py-6 rounded-xl h-[70px]  w-full  gap-1 bg-purple-500">
+            <FaPlus className="h-[30px] w-[20px]"/>
             <h2 className="text-3xl font-semibold">{data.tasks.new_task}</h2>
             <h3 className="text-xl font-medium">New Task</h3>
         </div>
 
-        <div className="flex flex-col justify-center items-center px-9 py-6 rounded-xl h-[70px] w-full bg-yellow-500">
+        <div className="flex  justify-center items-center px-9 py-6 rounded-xl h-[70px] w-full  bg-yellow-500">
+            <TiTick className="h-[42px] w-[37px]"/>
             <h2 className="text-3xl font-semibold">{data.tasks.completed}</h2>
             <h3 className="text-xl font-medium">Completed Task</h3>
         </div>
 
-        <div className=" flex flex-col justify-center items-center px-9 py-6 rounded-xl h-[70px]  w-full bg-blue-500">
+        <div className=" flex  justify-center items-center px-9 py-6 rounded-xl h-[70px]  w-full gap-1 bg-blue-500">
+            <FaClipboardCheck className="h-[23px] w-[18px]"/>
             <h2 className="text-3xl font-semibold">{data.tasks.active}</h2>
             <h3 className="text-xl font-medium ">Accepted Task</h3>
         </div>
 
-        <div className="flex flex-col justify-center items-center px-9 py-6 rounded-xl h-[70px]  w-full bg-pink-500">
+        <div className="flex  justify-center items-center px-9 py-6 rounded-xl h-[70px]  w-full gap-1 bg-pink-500">
+            <ImCross className="h-[23px] w-[18px]"/>
             <h2 className="text-3xl font-semibold">{data.tasks.newfailed}</h2>
             <h3 className="text-xl font-medium">Failed Task</h3>
         </div>
